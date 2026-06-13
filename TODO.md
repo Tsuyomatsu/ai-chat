@@ -43,14 +43,14 @@
 ## Phase 5: デプロイ準備
 
 - [x] `Dockerfile` 作成（Node.js standalone ビルド用）
-- [ ] Cloud Run デプロイ手順を確認・ドキュメント化 ※デプロイ時に実施
+- [x] Cloud Run デプロイ手順を確認・ドキュメント化
 
 ## Phase 6: 動作確認
 
-- [ ] `npm run dev` でローカル起動確認 ※ANTHROPIC_API_KEY 設定後に実施
-- [ ] チャットの送受信が正常に動作するか確認
-- [ ] ストリーミング表示が正しく動作するか確認
-- [ ] リセットボタンで履歴がクリアされるか確認
+- [x] `npm run dev` でローカル起動確認
+- [x] チャットの送受信が正常に動作するか確認
+- [x] ストリーミング表示が正しく動作するか確認
+- [x] リセットボタンで履歴がクリアされるか確認
 - [x] `npm run build` でビルドエラーがないか確認
 
 ---
@@ -59,9 +59,9 @@
 
 ### 🔴 クリティカル（動作・セキュリティに影響）
 
-- [ ] `public/` ディレクトリを作成する
+- [x] `public/` ディレクトリを作成する
   - Dockerfile の `COPY --from=builder /app/public ./public` が `public/` 未存在でビルドエラーになる
-- [ ] `.dockerignore` を作成する
+- [x] `.dockerignore` を作成する
   - 未設定だと `.env.local`（APIキー）や `node_modules/` が Docker イメージに混入するリスクがある
   - 除外すべき対象: `.env.local`, `node_modules/`, `.next/`, `.git/`
 - [ ] API ルートのリクエストパースに try/catch を追加する
@@ -86,7 +86,7 @@
 
 ### 🟡 UX 改善
 
-- [ ] メッセージ送信後にテキストエリアへフォーカスを戻す
+- [x] メッセージ送信後にテキストエリアへフォーカスを戻す
   - `handleSend` の末尾で `textareaRef.current?.focus()` を呼ぶ
 - [ ] エラーメッセージを通常のAI返答と視覚的に区別する
   - エラー時の吹き出しを赤系のスタイル（例: `bg-red-50 text-red-600 border-red-200`）にする
